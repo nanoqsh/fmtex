@@ -1,0 +1,21 @@
+[package]
+name = "fmtex"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["nanoqsh"]
+keywords = ["no_std", "format", "fmt", "display"]
+documentation = "https://docs.rs/fmtex"
+readme = "README.md"
+repository = "https://github.com/nanoqsh/fmtex"
+rust-version = "1.79"
+
+[lints.clippy]
+manual-assert = "deny"
+match-wildcard-for-single-variants = "deny"
+missing-assert-message = "deny"
+missing_inline_in_public_items = "deny"
+semicolon-if-nothing-returned = "deny"
+trivially-copy-pass-by-ref = "deny"
+use-self = "deny"
+unwrap-used = "deny"
