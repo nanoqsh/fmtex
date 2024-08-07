@@ -2,6 +2,7 @@
 name = "fmtex"
 version = "0.1.0"
 edition = "2021"
+description = "Extra format adaptors"
 license = "MIT"
 authors = ["nanoqsh"]
 keywords = ["no_std", "format", "fmt", "display"]
