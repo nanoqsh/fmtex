@@ -6,7 +6,7 @@ mod ext;
 mod joined;
 
 pub use {
-    consume::Consume,
-    ext::{FormatRefIterator, IntoIteratorExt},
+    consume::Consumed,
+    ext::{IntoIteratorByRefExt, IntoIteratorExt},
     joined::Joined,
 };

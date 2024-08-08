@@ -17,7 +17,7 @@ cargo add fmtex
 
 Use library traits to format something:
 ```rust
-use fmtex::FormatRefIterator;
+use fmtex::IntoIteratorByRefExt;
 
 let s = [1, 2, 3].joined(", ").to_string();
 assert_eq!(s, "1, 2, 3");

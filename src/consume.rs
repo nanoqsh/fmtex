@@ -1,10 +1,10 @@
 use core::{cell::Cell, fmt};
 
-pub struct Consume<I> {
+pub struct Consumed<I> {
     state: Cell<Option<I>>,
 }
 
-impl<I> Consume<I> {
+impl<I> Consumed<I> {
     #[inline]
     pub(crate) fn new(iter: I) -> Self {
         Self {
@@ -13,7 +13,7 @@ impl<I> Consume<I> {
     }
 }
 
-impl<I> Iterator for &Consume<I>
+impl<I> Iterator for &Consumed<I>
 where
     I: Iterator,
 {
@@ -29,10 +29,7 @@ where
     }
 }
 
-impl<I> fmt::Debug for Consume<I>
-where
-    I: IntoIterator,
-{
+impl<I> fmt::Debug for Consumed<I> {
     #[inline]
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         f.debug_struct("Consume").field("state", &"..").finish()
@@ -41,11 +38,11 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::ext::{FormatRefIterator, IntoIteratorExt};
+    use crate::ext::{IntoIteratorByRefExt, IntoIteratorExt};
 
     #[test]
     fn consume_range() {
-        let range = (1..4).consume();
+        let range = (1..4).consumed();
         let s = range.joined(", ").to_string();
         assert_eq!(s, "1, 2, 3");
 

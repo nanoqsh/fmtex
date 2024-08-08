@@ -32,7 +32,7 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::ext::FormatRefIterator;
+    use crate::ext::IntoIteratorByRefExt;
 
     #[test]
     fn joined_array() {
