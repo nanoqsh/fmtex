@@ -14,6 +14,7 @@ impl<I> Consumed<I> {
 }
 
 impl<I> Default for Consumed<I> {
+    #[inline]
     fn default() -> Self {
         Self {
             state: Cell::default(),
