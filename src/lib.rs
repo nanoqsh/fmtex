@@ -5,8 +5,12 @@ mod consume;
 mod ext;
 mod joined;
 
-pub use {
+pub use crate::{
     consume::Consumed,
     ext::{IntoIteratorByRefExt, IntoIteratorExt},
     joined::Joined,
 };
+
+pub mod prelude {
+    pub use crate::ext::{IntoIteratorByRefExt as _, IntoIteratorExt as _};
+}
