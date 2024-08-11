@@ -1,5 +1,7 @@
 use core::fmt;
 
+/// Display implementer for the
+/// [`joined`](crate::IntoIteratorByRefExt::joined) method.
 #[derive(Clone, Copy, Debug)]
 pub struct Joined<I, S> {
     pub(crate) iter: I,

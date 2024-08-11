@@ -1,5 +1,7 @@
 use core::{cell::Cell, fmt, iter::FusedIterator};
 
+/// Reference iterator for the
+/// [`consumed`](crate::IntoIteratorExt::consumed) method.
 pub struct Consumed<I> {
     state: Cell<Option<I>>,
 }
@@ -73,7 +75,7 @@ mod tests {
         let s = range.joined(", ").to_string();
         assert_eq!(s, "1, 2, 3");
 
-        // on second `to_string` call the range iterator is drained
+        // on second `to_string` call the range iterator is exhausted
         assert_eq!(range.len(), 0);
 
         let s = range.joined(", ").to_string();
