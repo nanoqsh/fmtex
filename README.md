@@ -1,7 +1,7 @@
 <div align="center">
     <h1>fmtex</h1>
     <p>
-        Extra format adaptors.
+        Extra format adaptors
     </p>
     <p>
         <a href="https://crates.io/crates/fmtex"><img src="https://img.shields.io/crates/v/fmtex.svg"></img></a>
