@@ -6,6 +6,7 @@
     <p>
         <a href="https://crates.io/crates/fmtex"><img src="https://img.shields.io/crates/v/fmtex.svg"></img></a>
         <a href="https://docs.rs/fmtex"><img src="https://docs.rs/fmtex/badge.svg"></img></a>
+        <a href="https://github.com/nanoqsh/fmtex/actions"><img src="https://github.com/nanoqsh/fmtex/workflows/ci/badge.svg"></img></a>
     </p>
 </div>
 
