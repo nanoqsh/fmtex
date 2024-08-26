@@ -1,7 +1,16 @@
 use {
-    crate::{consumed::Consumed, joined::Joined},
+    crate::{consumed::Consumed, joined::Joined, repeated::Repeated},
     core::fmt,
 };
+
+pub trait DisplayExt: fmt::Display {
+    #[inline]
+    fn repeated(&self, n: usize) -> Repeated<'_, Self> {
+        Repeated { display: self, n }
+    }
+}
+
+impl<T> DisplayExt for T where T: fmt::Display {}
 
 /// Extension trait for references that are
 /// [`IntoIterator`](::core::iter::IntoIterator).
