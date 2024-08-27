@@ -1,5 +1,7 @@
 use core::fmt;
 
+/// Display implementer for the
+/// [`repeated`](crate::DisplayExt::repeated) method.
 #[derive(Clone, Copy, Debug)]
 pub struct Repeated<'ds, D>
 where

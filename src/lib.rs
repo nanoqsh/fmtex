@@ -8,7 +8,7 @@ mod repeated;
 
 pub use crate::{
     consumed::Consumed,
-    ext::{IntoIteratorByRefExt, IntoIteratorExt},
+    ext::{DisplayExt, IntoIteratorByRefExt, IntoIteratorExt},
     joined::Joined,
     repeated::Repeated,
 };

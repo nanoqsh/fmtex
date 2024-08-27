@@ -3,7 +3,17 @@ use {
     core::fmt,
 };
 
+/// Extension trait for [`Display`](::core::fmt::Display).
 pub trait DisplayExt: fmt::Display {
+    /// Prints the value multiple times.
+    ///
+    /// # Examples
+    /// ```
+    /// use fmtex::prelude::*;
+    ///
+    /// let s = "*".repeated(3).to_string();
+    /// assert_eq!(s, "***");
+    /// ```
     #[inline]
     fn repeated(&self, n: usize) -> Repeated<'_, Self> {
         Repeated { display: self, n }
