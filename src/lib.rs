@@ -1,19 +1,18 @@
 #![cfg_attr(not(test), no_std)]
 #![doc = include_str!("../README.md")]
 
-mod consumed;
-mod ext;
-mod joined;
-mod repeated;
+mod display;
+mod iter;
 
 pub use crate::{
-    consumed::Consumed,
-    ext::{DisplayExt, IntoIteratorByRefExt, IntoIteratorExt},
-    joined::Joined,
-    repeated::Repeated,
+    display::{DisplayExt, Repeated},
+    iter::{Consumed, IntoIteratorByRefExt, IntoIteratorExt, Joined},
 };
 
 /// Reexported extension traits.
 pub mod prelude {
-    pub use crate::ext::{DisplayExt as _, IntoIteratorByRefExt as _, IntoIteratorExt as _};
+    pub use crate::{
+        display::DisplayExt as _,
+        iter::{IntoIteratorByRefExt as _, IntoIteratorExt as _},
+    };
 }

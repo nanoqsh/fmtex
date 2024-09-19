@@ -1,14 +1,33 @@
 use core::fmt;
 
+/// Extension trait for [`Display`](core::fmt::Display).
+pub trait DisplayExt: fmt::Display {
+    /// Prints the value multiple times.
+    ///
+    /// # Examples
+    /// ```
+    /// use fmtex::prelude::*;
+    ///
+    /// let s = "*".repeated(3).to_string();
+    /// assert_eq!(s, "***");
+    /// ```
+    #[inline]
+    fn repeated(&self, n: usize) -> Repeated<'_, Self> {
+        Repeated { display: self, n }
+    }
+}
+
+impl<T> DisplayExt for T where T: fmt::Display {}
+
 /// Display implementer for the
-/// [`repeated`](crate::DisplayExt::repeated) method.
+/// [`repeated`](DisplayExt::repeated) method.
 #[derive(Clone, Copy, Debug)]
 pub struct Repeated<'ds, D>
 where
     D: ?Sized,
 {
-    pub(crate) display: &'ds D,
-    pub(crate) n: usize,
+    display: &'ds D,
+    n: usize,
 }
 
 impl<D> fmt::Display for Repeated<'_, D>
@@ -28,7 +47,7 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::ext::DisplayExt;
+    use super::*;
 
     #[test]
     fn repeated_empty() {
